@@ -1,10 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
- 
 	<link rel="stylesheet" href="css/styles.css">
      <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
@@ -24,86 +25,16 @@
 					<li class="nav-item active"><a class="nav-link" href="index.html"><span class="fa fa-home fa-lg"></span>Home</a></li>
 					<li class="nav-item"><a class="nav-link" href="bookspot.jsp"><span class="fa fa-shopping-bag fa-lg"></span>Book a spot</a></li>
 					<li class="nav-item"><a class="nav-link"href="ContactUs.html"><span class="fa fa-address-card fa-lg"></span>Contact Us</a></li>
+					<li class="nav-item"><a class="nav-link" href="MyAccount.jsp"><span class="fa fa-server fa-lg"></span>My Account</a></li>
 				</ol>
 			</div>
-			<span class="navbar-text">
-				<a id="loginButton" data-toggle="modal" data-target="#loginModal" href="">
-					<span class="fa fa-sign-in"></span> Log in/ Register
-				</a>
-			</span>
  		</div>
 	</nav>
-	<div class="modal fade" id="loginModal" role="dialog">
-		<div class="modal-dialog modal-lg" role="content">
-		  	<div class="modal-content">
-				<div class="modal-header">
-			  		<h5 class="modal-title">Login</h5>
-			  		<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
-				<form action="login" method="POST">
-					<div class="modal-body">
-						<div class="row">
-							<div class="form-group col-sm-4">
-								<input type="email" placeholder="Username" id="username" name="username" class="form-control">
-							</div>
-							<div class="form-group col-sm-4">
-								<input type="password" placeholder="Password" id="pass" name="pass" class="form-control">
-							</div>
-							<div class="form-group col-sm-4 form-check">
-								<input type="checkbox" id="remme" name="remme" class="form-check-input">
-								<label for="remme" class="form-check-label"><strong>Remember me</strong></label>
-							</div>
-						</div>
-					</div>
-					<div class="modal-footer">
-                    	<input type="submit" class="btn btn-primary" name="query" value="Login"/>
-                    	<input data-toggle="modal" data-target="#registerModal" type="button" class="btn btn-success" name="query" value="Register"/>
-						<button data-dismiss="modal" class="btn btn-secondary">Cancel</button>
-					</div>
-				</form>
-		  	</div>
-		</div>
-    </div>
-    <div class="modal fade" id="registerModal" role="dialog">
-		<div class="modal-dialog modal-lg" role="content">
-		  	<div class="modal-content">
-				<div class="modal-header">
-			  		<h5 class="modal-title">Register</h5>
-			  		<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
-				<form action="login" method="POST">
-					<div class="modal-body">
-						<div class="row">
-							<div class="form-group col-sm-4">
-								<input type="email" placeholder="Email" id="username" name="username" class="form-control">
-							</div>
-							<div class="form-group col-sm-4">
-								<input type="text" placeholder="Name" id="name" name="name" class="form-control">
-							</div>
-						</div>
-						<div class="row">
-							<div class="form-group col-sm-4">
-								<input type="tel" id="phno" name="phno" class="form-control" placeholder="Mobile number">
-							</div>
-							<div class="form-group col-sm-4">
-								<input type="password" placeholder="Password" id="pass" name="pass" class="form-control">
-							</div>
-						</div>
-					</div>
-					<div class="modal-footer">
-                        <input type="submit" class="btn btn-success" name="query" value="Register"/>
-                        <input data-toggle="modal" data-target="#loginModal" type="button" class="btn btn-primary" name="query" value="Login"/>
-						<button data-dismiss="modal" class="btn btn-secondary">Cancel</button>
-					</div>
-				</form>
-		  	</div>
-		</div>
-	</div>	
 	<header class="jumbotron">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-sm-10">
-                    <h2>Parkolás</h2>
+                    <h2>Parkolas</h2>
 					<p>We manage large areas of our parkinglots spread across India. This is our automated system enabling hassle free bookings and checkouts.</p>
 				</div>
 				<div>
@@ -250,23 +181,23 @@
 			</div>
 			<br>
 			<div class="row justify-content-center">
-                © Copyright 2020 &nbsp;<b> Parkolas</b>&nbsp;All Rights Reserved
+                 Copyright 2020 &nbsp;<b> Parkolas</b>&nbsp;All Rights Reserved
 			</div>
 		</div>
-	</footer>
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script> 
+		
+		<script> 
 		function alertName(){
-			var req = <%=request %>;
-			if(req!=null){
 			var Msg = '<%=(String)request.getAttribute("state")%>';
-			if(Msg != null)
+			var name = '<%=(String)request.getAttribute("name")%>';
+			if(Msg == "register")Msg += " and login";
+			Msg += " successful ";
+			Msg += name;
 			window.alert(Msg);
-			}
 		}
 		</script>
-	<script type="text/javascript"> window.onload = alertName; </script>
-	
+		<script type="text/javascript"> window.onload = alertName; </script>
+	</footer>
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

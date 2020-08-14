@@ -1,10 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
- 
 	<link rel="stylesheet" href="css/styles.css">
      <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
@@ -21,55 +22,18 @@
 			<a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo" class="img-fluid" height="30" width="41"></a>
 			<div class="collapse navbar-collapse" id="Navbar">
 				<ol class="navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link" href="index.html"><span class="fa fa-home fa-lg"></span>Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="bookspot.jsp"><span class="fa fa-shopping-bag fa-lg"></span>Book a spot</a></li>
+					<li class="nav-item active"><a class="nav-link" href="index2.jsp"><span class="fa fa-home fa-lg"></span>Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="admin.jsp"><span class="fa  fa-edit fa-lg"></span>Admin Console</a></li>
 					<li class="nav-item"><a class="nav-link"href="ContactUs.html"><span class="fa fa-address-card fa-lg"></span>Contact Us</a></li>
-					<li class="nav-item"><a class="nav-link" href="MyAccount.jsp"><span class="fa fa-server fa-lg"></span>My Account</a></li>
 				</ol>
 			</div>
-			<span class="navbar-text">
-				<a id="loginButton" data-toggle="modal" data-target="#loginModal" href="">
-					<span class="fa fa-sign-in"></span> Log in/ Register
-				</a>
-			</span>
  		</div>
 	</nav>
-	<div class="modal fade" id="loginModal" role="dialog">
-		<div class="modal-dialog modal-lg" role="content">
-		  	<div class="modal-content">
-				<div class="modal-header">
-			  		<h5 class="modal-title">Login</h5>
-			  		<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
-				<div class="modal-body">
-					<form>
-						<div class="row">
-							<div class="form-group col-sm-4">
-								<input type="email" placeholder="Username" id="username" name="username" class="form-control">
-							</div>
-							<div class="form-group col-sm-4">
-								<input type="password" placeholder="Password" id="pass" name="pass" class="form-control">
-							</div>
-							<div class="form-group col-sm-4 form-check">
-								<input type="checkbox" id="remme" name="remme" class="form-check-input">
-								<label for="remme" class="form-check-label"><strong>Remember me</strong></label>
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button class="btn btn-primary">Login</button>
-					<button class="btn btn-success">Register</button>
-					<button data-dismiss="modal" class="btn btn-secondary">Cancel</button>
-				</div>
-		  	</div>
-		</div>
-	</div>	
 	<header class="jumbotron">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-sm-10">
-                    <h2>Parkolás</h2>
+                    <h2>Parkolas</h2>
 					<p>We manage large areas of our parkinglots spread across India. This is our automated system enabling hassle free bookings and checkouts.</p>
 				</div>
 				<div>
@@ -128,6 +92,65 @@
                 </div>
             </div>
         </div>
+        <div class="row row-content">
+            <div class="col-12">
+                <h2>Our Centres</h2>
+                <div id="accordion">
+                    <div class="card">
+                        <div role="tab" class="card-header" id="orghead">
+                            <h3 class="mb-0">
+                                <a data-toggle="collapse" data-target="#org">
+                                    Organized parking <small>,efficient</small>   
+                                </a>
+                            </h3>
+                        </div>
+                        <div class="collapse show" id="org" data-parent="#accordion">
+                            <div class="card-body">
+                                <p class="d-none d-sm-block">A well organized parking with effective usage of space</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div role="tab" class="card-header" id="easyhead">
+                            <h3 class="mb-0">
+                                <a class="collapsed" data-toggle="collapse" data-target="#easy">
+                                    Easy to park <small>,hassle-free</small>
+                                </a>
+                            </h3>
+                        </div>
+                        <div class="collapse" id="easy" data-parent="#accordion">  
+                            <div class="card-body">
+                                <p class="d-none d-sm-block">Ample space facilitating easy movement of vehicles</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div role="tab" class="card-header" id="multihead">
+                            <h3 class="mb-0">
+                                <a class="collapsed" data-toggle="collapse" data-target="#multi">
+                                    Multi-level parking
+                                </a>
+                            </h3>
+                        </div>
+                        <div class="collapse" id="multi" data-parent="#accordion">
+                            <div class="card-body">
+                                <p class="d-none d-sm-block">Multilevel parking, upto <em>six levels</em> in a parkinglot. Facility to park any type of vehicle</p>
+                            </div>   
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div role="tab" class="card-header" id="largehead">
+                            <a class="collapsed" data-toggle="collapse" data-target="#large"><h3 class="mb-0">Large vehicles</h3></a>
+                        </div>
+                        <div class="collapse" id="large" data-parent="#accordion"> 
+                            <div class="card-body">
+                                <p class="d-none d-sm-block">Facility to park trucks,buses and jeeps</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 	<footer>
 		<div class="container">
@@ -157,14 +180,22 @@
 			</div>
 			<br>
 			<div class="row justify-content-center">
-                © Copyright 2020 &nbsp;<b> Parkolas</b>&nbsp;All Rights Reserved
+                 Copyright 2020 &nbsp;<b> Parkolas</b>&nbsp;All Rights Reserved
 			</div>
 		</div>
+		
+		<script> 
+		function alertName(){
+			var Msg = '<%=(String)request.getAttribute("state")%>';
+			var name = '<%=(String)request.getAttribute("name")%>';
+			Msg += " successful ";
+			Msg += name;
+			window.alert(Msg);
+		}
+		</script>
+		<script type="text/javascript"> window.onload = alertName; </script>
 	</footer>
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	
-
-	</script>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
