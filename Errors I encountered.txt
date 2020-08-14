@@ -1,0 +1,8 @@
+This file contains the errors I faced.
+1. Ajax was not working. I included jquery-3.1.1.min.slim.js. The slim version. I have to    include <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> which is not    a slim version.
+2. On pushing my file to remote : git push -u origin master....
+    To https://github.com/sush-101/parkol-s.git
+    ! [rejected]        master -> master (fetch first)
+    error: failed to push some refs to 'https://github.com/sush-101/parkol-s.git'
+    Solution1 : I had created a file in my git repository after pushing which is obviously not present in my local system. So, git push -u origin master --force worked and it deleted         that file I had in my repository.
+    Solution2 : Delete that file which is not in the local system and do git push -u origin master again.
