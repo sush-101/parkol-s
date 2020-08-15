@@ -22,7 +22,16 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/pc/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/parkolás/WEB-INF/lib/mysql-connector-java-8.0.20.jar"/>
-	<classpathentry kind="lib" path="C:/Users/pc/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/parkolás/WEB-INF/lib/gson-2.8.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/pc/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/parkolás/WEB-INF/lib/mysql-connector-java-8.0.20.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/pc/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/parkolás/WEB-INF/lib/gson-2.8.5.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/pc/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/parkolás/WEB-INF/lib/jstl-1.2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

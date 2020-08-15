@@ -27,7 +27,6 @@ public class AttendantServlet extends HttpServlet {
 			response.setContentType("application/json");
 			response.setCharacterEncoding("UTF-8");
 			String json = new Gson().toJson(list);
-			System.out.println("converted json attendant list"+json);
 			response.getWriter().write(json);
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();

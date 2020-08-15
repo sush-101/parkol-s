@@ -19,12 +19,14 @@
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-			<a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo" class="img-fluid" height="30" width="41"></a>
+			<a class="navbar-brand" href="index2.jsp"><img src="img/logo.png" alt="logo" class="img-fluid" height="30" width="41"></a>
 			<div class="collapse navbar-collapse" id="Navbar">
 				<ol class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link" href="index2.jsp"><span class="fa fa-home fa-lg"></span>Home</a></li>
 					<li class="nav-item"><a class="nav-link" href="admin.jsp"><span class="fa  fa-edit fa-lg"></span>Admin Console</a></li>
-					<li class="nav-item"><a class="nav-link"href="ContactUs.html"><span class="fa fa-address-card fa-lg"></span>Contact Us</a></li>
+				</ol>
+				<ol class="navbar-nav">
+					<li class="nav-item active"><a href="index.jsp" class="nav-link">Log Out<span class="fa fa-sign-out"></span></a></li>
 				</ol>
 			</div>
  		</div>
@@ -186,20 +188,18 @@
 		
 		<script> 
 		function alertName(){
-			var Msg = '<%=(String)request.getAttribute("state")%>';
-			var name = '<%=(String)request.getAttribute("name")%>';
-			Msg += " successful ";
+			var Msg = "login successful ";
+			var name = '<%=(String)session.getAttribute("user")%>';
 			Msg += name;
-			window.alert(Msg);
+			window.alert(Msg);	
 		}
 		</script>
 		<script type="text/javascript"> window.onload = alertName; </script>
 	</footer>
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="js/scripts.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK7NBRHrwjqqaIXVQ7oFlkcUW_lhp7MT8&callback=myMap"></script>
 </body>
 </html>

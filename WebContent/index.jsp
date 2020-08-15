@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,15 +18,11 @@
 <body>
 	<nav class="navbar navbar-expand-sm navbar-dark fixed-top">
 		<div class="container">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-			<a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo" class="img-fluid" height="30" width="41"></a>
-			<div class="collapse navbar-collapse" id="Navbar">
+			
+			<a class="navbar-brand" href="index.jsp"><img src="img/logo.png" alt="logo" class="img-fluid" height="30" width="41"></a>
+			<div>
 				<ol class="navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link" href="index.html"><span class="fa fa-home fa-lg"></span>Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="bookspot.jsp"><span class="fa fa-shopping-bag fa-lg"></span>Book a spot</a></li>
-					<li class="nav-item"><a class="nav-link"href="ContactUs.html"><span class="fa fa-address-card fa-lg"></span>Contact Us</a></li>
+					<li class="nav-item active"><h2><a class="nav-link" href="index.jsp">Welcome to Parkolas!!</a></h2></li>
 				</ol>
 			</div>
 			<span class="navbar-text">
@@ -47,7 +46,7 @@
 								<input type="email" placeholder="Username" id="username" name="username" class="form-control">
 							</div>
 							<div class="form-group col-sm-4">
-								<input type="password" placeholder="Password" id="pass" name="pass" class="form-control">
+								<input type="password" placeholder="Password" id="password" name="pass" class="form-control">
 							</div>
 							<div class="form-group col-sm-4 form-check">
 								<input type="checkbox" id="remme" name="remme" class="form-check-input">
@@ -75,7 +74,7 @@
 					<div class="modal-body">
 						<div class="row">
 							<div class="form-group col-sm-4">
-								<input type="email" placeholder="Email" id="username" name="username" class="form-control">
+								<input type="email" placeholder="Email" id="user" name="username" class="form-control">
 							</div>
 							<div class="form-group col-sm-4">
 								<input type="text" placeholder="Name" id="name" name="name" class="form-control">
@@ -227,9 +226,7 @@
 			<div class="row align-items-center">
 				<div class="col-5 col-sm-3">
 					<b>Links</b><br>
-					<a href="#">Home</a><br>
-					<a href="#">AboutUs</a><br>
-					<a href="#">MyAccount</a>				
+					<a href="#">Home</a>			
 				</div>
 				<div class="col-5 col-sm-3 offset-1">
 					<b>Contact Us</b><br>
@@ -253,24 +250,21 @@
                 © Copyright 2020 &nbsp;<b> Parkolas</b>&nbsp;All Rights Reserved
 			</div>
 		</div>
+		${request}.getAttribute("state");
 	</footer>
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script> 
-		function alertName(){
-			var req = <%=request %>;
-			if(req!=null){
+	<script type="text/javascript"> 
+		function alertName(){	
 			var Msg = '<%=(String)request.getAttribute("state")%>';
-			if(Msg != null)
+			console.log(Msg);
 			window.alert(Msg);
-			}
 		}
-		</script>
+	</script>
 	<script type="text/javascript"> window.onload = alertName; </script>
 	
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="js/scripts.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK7NBRHrwjqqaIXVQ7oFlkcUW_lhp7MT8&callback=myMap"></script>
 </body>
 </html>

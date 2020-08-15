@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +22,7 @@
 			<a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo" class="img-fluid" height="30" width="41"></a>
 			<div class="collapse navbar-collapse" id="Navbar">
 				<ol class="navbar-nav mr-auto">
-					<li class="nav-item"><a class="nav-link" href="index.jsp"><span class="fa fa-home fa-lg"></span>Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="index1.jsp"><span class="fa fa-home fa-lg"></span>Home</a></li>
 					<li class="nav-item"><a class="nav-link" href="bookspot.jsp"><span class="fa fa-shopping-bag fa-lg"></span>Book a spot</a></li>
 					<li class="nav-item active"><a class="nav-link"href="ContactUs.html"><span class="fa fa-address-card fa-lg"></span>Contact Us</a></li>
 					<li class="nav-item"><a class="nav-link" href="MyAccount.jsp"><span class="fa fa-server fa-lg"></span>My Account</a></li>
@@ -102,9 +104,9 @@
 			<div class="row align-items-center">
 				<div class="col-5 col-sm-3">
 					<b>Links</b><br>
-					<a href="index.html">Home</a><br>
+					<a href="index1.jsp">Home</a><br>
 					<a href="#">ContactUs</a><br>
-					<a href="MyAccount.jsp">MyAccount</a>				
+					<a href="MyAccount.jsp"><%= session.getAttribute("name") %></a>				
 				</div>
 				<div class="col-5 col-sm-3 offset-1">
 					<b>Contact Us</b><br>
@@ -131,10 +133,9 @@
 	</footer>
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	</script>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="js/scripts.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK7NBRHrwjqqaIXVQ7oFlkcUW_lhp7MT8&callback=myMap"></script>
 </body>
 </html>

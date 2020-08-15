@@ -7,9 +7,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 	<link rel="stylesheet" href="css/styles.css">
-     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
      
 <title>Parkolas</title>
 </head>
@@ -77,7 +77,7 @@
   						<div class="row form-group">
   							<label for="removeattendant" class="col-3 col-form-label offset-sm-1"><span class="fa fa-user-times"></span><b>Remove</b></label>
   							<div class="col-8">
-  								<input type="email" id="removeattendant" name="demail" placeholder="Enter email id" class="form-control">
+  								<input type="email" id="removeattendant" name="email" placeholder="Enter email id" class="form-control">
   							</div>
   						</div>
   						<div class="row form-group">
@@ -85,13 +85,40 @@
   								<button class="btn btn-primary" type="submit">Remove the attendant</button>
   							</div>
   						</div>
-  					</form>	
+  					</form>
   				</div>	
   				<br>		
 				<div id="attendantsList"></div>
   			</div>
   			<div class="tab-pane fade" id="slots" role="tabpanel" ></div>
-  			<div class="tab-pane fade" id="price" role="tabpanel" ></div>
+  			<div class="tab-pane fade" id="price" role="tabpanel" >
+  				<div class="row">
+  					<form id="priceForm" action="" method="POST">
+  						<div class="form-group row">
+  							<div class="col-sm-4">
+  								<label for="Vehicle" class="control-label"><b>Change the price</b></label>
+  							</div>
+  							<div class="col-sm-4">
+  								<select id="Vehicle" name="Vehicle" class="form-control">
+  									<option value="bicycle">Bicycle</option>
+  									<option value="bike">Bike</option>
+  									<option value="car">Car</option>
+  									<option value="bus">Bus</option>
+  									<option value="truck">Truck</option>
+  								</select>
+  							</div>
+  							<div class="col-sm-4">
+  								<input type="number" class="form-control" placeholder="Enter the price" id="changedPrice" min="1">
+  							</div>						
+  						</div>	
+  						<div class="form-group row">
+  							<div class="col offset-4">
+  								<button class="btn btn-primary" type="submit" id="pricechangeButton">Change</button>
+  							</div>
+  						</div>					
+  					</form>
+  				</div>
+  			</div>
 		</div>
 	</div>
 	<footer>

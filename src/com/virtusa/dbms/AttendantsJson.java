@@ -22,7 +22,6 @@ public class AttendantsJson {
 		stmt.executeUpdate(query);
 	}
 	public List<Attendant> getList() throws SQLException {
-		System.out.println("In getList");
 		List<Attendant> res = new ArrayList<Attendant>();
 		stmt = con.createStatement();
 		rs = stmt.executeQuery("select *from attendant");
@@ -35,7 +34,6 @@ public class AttendantsJson {
 			temp.setAge(rs.getInt(5));
 			res.add(temp);
 		}
-		System.out.println("list of attendant objects "+res);
 		return res;
 	}
 }

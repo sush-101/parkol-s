@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.virtusa.dbms.loginCheck;
 
@@ -26,13 +27,15 @@ public class loginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = (String)request.getParameter("username");
 		String password = (String)request.getParameter("pass");
+		String remme = (String)request.getParameter("remme");
 		String req = request.getParameter("query");
 		String phno = null,name=null;
+		HttpSession session = request.getSession();
 		if(req.equals("Register")) {
 			phno = (String)request.getParameter("phno");
 			name = (String)request.getParameter("name");
 		}
-		String isPresent = null;
+		String isPresent = "";
 		loginCheck obj = null;
 		try {
 			obj = new loginCheck();
@@ -45,36 +48,38 @@ public class loginServlet extends HttpServlet {
 			e1.printStackTrace();
 		}
 		System.out.println("present "+isPresent);
-		if(isPresent!=null) {
+		if(!isPresent.equals("")) {
 			if(!req.equals("Register")){
-			request.setAttribute("state", "login");
-			request.setAttribute("name", isPresent);
-			if(username.equals("admin@gmail.com")) {
-				RequestDispatcher rd = request.getRequestDispatcher("index2.jsp");
-				rd.forward(request, response);
+			request.setAttribute("user", isPresent);
+				if(username.equals("admin@gmail.com")) {
+					RequestDispatcher rd = request.getRequestDispatcher("index2.jsp");
+					if(remme!=null)session.setAttribute("user",isPresent);
+					else session.setAttribute("user", "");
+					rd.forward(request, response);
+				}
+				else {
+					RequestDispatcher rd = request.getRequestDispatcher("index1.jsp");
+					if(remme!=null)session.setAttribute("user",isPresent);
+					else session.setAttribute("user", "");
+					rd.forward(request, response);
+				}
 			}
 			else {
-				RequestDispatcher rd = request.getRequestDispatcher("index1.jsp");
+				request.setAttribute("state", "duplicate");
+				RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 				rd.forward(request, response);
-			}
 			}
 		}
 		
 		else if(req.equals("Register")) {
 			try {
-				boolean check = obj.push(username,password,phno,name);
-				if(!check){
-					request.setAttribute("state", "duplicate");
-					RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-					rd.forward(request, response);
-				}
-				request.setAttribute("state", "register");
-				request.setAttribute("name", name);
-				RequestDispatcher rd = request.getRequestDispatcher("index1.jsp");
-				rd.forward(request, response);
+				obj.push(username,password,phno,name);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+			request.setAttribute("state", "Registration complete.Please login");
+			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+			rd.forward(request, response);
 		}
 		else {
 			request.setAttribute("state", "failed");
